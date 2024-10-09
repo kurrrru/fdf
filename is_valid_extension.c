@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_valid_extension.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 20:24:34 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/09 20:49:54 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/09 20:36:13 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/09 20:51:14 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+int	is_valid_extension(char *filename)
 {
-	if (argc != PROPER_ARGC)
-		error_usage();
-	if (!is_valid_extension(argv[1]))
-		error_extension();
-	return (0);
+	int		len;
+	char	*suffix;
+
+	len = ft_strlen(filename);
+	if (len < PROPER_EXTENSION_LEN)
+		return (FALSE);
+	suffix = filename + len - PROPER_EXTENSION_LEN;
+	if (ft_strncmp(suffix, PROPER_EXTENSION, PROPER_EXTENSION_LEN) == 0)
+		return (TRUE);
+	return (FALSE);
 }
