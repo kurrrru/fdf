@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/09 20:56:31 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:33:44 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@
 
 # define PROPER_EXTENSION ".fdf"
 # define PROPER_EXTENSION_LEN 4
-# define MSG_EXTENSION_ERROR "Extension Error: The extension of the file must be \".fdf\""
+# define MSG_EXTENSION_ERROR "Extension Error: \
+The extension of the file must be \".fdf\""
 
 void	error_usage(void);
 void	error_extension(void);
