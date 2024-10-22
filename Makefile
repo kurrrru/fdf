@@ -18,17 +18,15 @@ MLX			=	$(MLX_DIR)/$(MLX_NAME)
 # Compiler settings
 CC			=	cc
 LIB_FLAGS	=	-L$(MLX_DIR) -lmlx -lXext -lX11 -lm -L$(LIBFT_DIR) -lft
-CFLAGS		=	-Wall -Wextra -Werror $(LIB_FLAGS)
+CFLAGS		=	-Wall -Wextra -Werror
 
 # Remove command
 RM			=	rm -f
 
 .DEFAULT_GOAL = all
 
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
+	$(CC) $(CFLAGS) $(LIB_FLAGS) $(OBJS) $(MLX) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -49,5 +47,7 @@ fclean: clean
 	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
+
+all: $(NAME)
 
 .PHONY: all clean fclean re
