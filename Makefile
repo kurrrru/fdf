@@ -1,33 +1,52 @@
-NAME		= fdf
-SRCS_CHECK	= is_valid_extension.c
-SRCS_ERROR	= error_argc.c error_extension.c
-SRCS		= main.c $(SRCS_ERROR) $(SRCS_CHECK)
-OBJS		= $(SRCS:.c=.o)
-LIBFTDIR	= libft
-LIBFT		= libft.a
-CC			= cc
-LIBM_FLAGS	= -lm
-CFLAGS		= -Wall -Wextra -Werror $(LIBM_FLAGS)
+NAME		=	fdf
+SRCS		=	main.c \
+				error_argc.c \
+				error_extension.c \
+				is_valid_extension.c
+OBJS		=	$(SRCS:.c=.o)
+
+# Libft
+LIBFT_DIR	=	libft
+LIBFT_NAME	=	libft.a
+LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
+
+# Minilibx
+MLX_DIR		=	minilibx-linux
+MLX_NAME	=	libmlx_Linux.a
+MLX			=	$(MLX_DIR)/$(MLX_NAME)
+
+# Compiler settings
+CC			=	cc
+LIB_FLAGS	=	-L$(MLX_DIR) -lmlx -lXext -lX11 -lm -L$(LIBFT_DIR) -lft
+CFLAGS		=	-Wall -Wextra -Werror $(LIB_FLAGS)
+
+# Remove command
+RM			=	rm -f
 
 .DEFAULT_GOAL = all
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFTDIR)/$(LIBFT)
-	$(CC) $(CFLAGS) -o $@ $^
-
-$(LIBFTDIR)/$(LIBFT):
-	make -C $(LIBFTDIR)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+$(MLX):
+	make -C $(MLX_DIR)
 
 clean:
-	rm -f $(OBJS)
-	make -C $(LIBFTDIR) fclean
+	$(RM) $(OBJS)
+	make -C $(LIBFT_DIR) clean
+	make -C $(MLX_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
