@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:34 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 14:56:29 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/25 14:59:43 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	// t_data	data;
-	t_map *map;
+	t_map	*map;
 
 	param_check(argc, argv);
 	map = map_init();
