@@ -1,8 +1,17 @@
 NAME		=	fdf
 SRCS		=	main.c \
-				error_argc.c \
-				error_extension.c \
-				is_valid_extension.c
+				param_check.c \
+				parse_map.c \
+				free_xd.c \
+				wrap_file_manip.c \
+				wrap_memory.c \
+				wrap_mlx.c \
+				atoi_check.c \
+				atox_check.c \
+				fdf_atoi.c \
+				fdf_atox.c \
+				map_init.c
+
 OBJS		=	$(SRCS:.c=.o)
 
 # Libft
@@ -17,8 +26,12 @@ MLX			=	$(MLX_DIR)/$(MLX_NAME)
 
 # Compiler settings
 CC			=	cc
-LIB_FLAGS	=	-L$(MLX_DIR) -lmlx -lXext -lX11 -lm -L$(LIBFT_DIR) -lft
-CFLAGS		=	-Wall -Wextra -Werror
+DEBUG		=	-fsanitize=address
+LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd
+CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
+
+CFLAGS		+=	$(DEBUG)
+LFLAGS		+=	$(DEBUG)
 
 # Remove command
 RM			=	rm -f
@@ -26,10 +39,10 @@ RM			=	rm -f
 .DEFAULT_GOAL = all
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
-	$(CC) $(CFLAGS) $(LIB_FLAGS) $(OBJS) $(MLX) -o $(NAME)
+	$(CC) -o $(NAME) $(OBJS) $(LFLAGS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -o $@ $(CFLAGS) -c $<
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
