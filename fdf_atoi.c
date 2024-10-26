@@ -27,6 +27,8 @@ void	fdf_atoi(const char *str, t_map *map, int i, int j)
 	while (ft_isdigit(*str))
 		ret = ret * 10 + (*str++ - '0') * sign;
 	map->data[i][j] = (int)ret;
+	map->max = fdf_max(map->max, map->data[i][j]);
+	map->min = fdf_min(map->min, map->data[i][j]);
 	if (*str++ == ',')
 		fdf_atox(str, map, i, j);
 }

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:42:12 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 14:56:47 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:40:38 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ t_map	*map_init(void)
 	map->color_flag = FALSE;
 	map->data = NULL;
 	map->color = NULL;
+	map->max = INT_MIN;
+	map->min = INT_MAX;
 	return (map);
 }

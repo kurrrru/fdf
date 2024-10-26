@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:15:22 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 21:14:33 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:16:50 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	draw_line(t_data *data, t_point p1, t_point p2)
 
 	step = fdf_max(fdf_abs(p2.x - p1.x), fdf_abs(p2.y - p1.y));
 	i = -1;
-	printf("p1.x = %d, p1.y = %d, p2.x = %d, p2.y = %d\n", p1.x, p1.y, p2.x, p2.y);
-	printf("step = %d\n", step);
 	while (i <= step)
 	{
 		p.x = in_div(p1.x, p2.x, i, step);
@@ -33,7 +31,6 @@ void	draw_line(t_data *data, t_point p1, t_point p2)
 		p.color.trgb[2] = in_div(p1.color.trgb[2], p2.color.trgb[2], i, step);
 		p.color.trgb[3] = in_div(p1.color.trgb[3], p2.color.trgb[3], i, step);
 		draw_point(data, p);
-		printf("x = %d, y = %d, [%d, %d, %d, %d]\n", p.x, p.y, p.color.trgb[0], p.color.trgb[1], p.color.trgb[2], p.color.trgb[3]);
 		i++;
 	}
 }

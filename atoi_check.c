@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 09:34:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:07:56 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:29:53 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	atoi_check(const char *str, t_map *map)
 		map->color_flag = TRUE;
 		atox_check(str, ++i);
 	}
-	else if (map->color_flag)
-		error_atoi_check(MSG_ATOI_FORMAT_ERROR);
 	else if (str[i] != '\0')
 		error_atoi_check(MSG_ATOI_ERROR_NOT_DIGIT);
 }

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:53:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:03:57 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:41:57 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	read_map(int fd, char ****map_str, int *map_size);
 static void	size_check(char ***map_str, t_map *map);
+static void	set_default_color(int *color, int width);
 
 void	parse_file(char *filename, t_map *map)
 {
@@ -33,6 +34,7 @@ void	parse_file(char *filename, t_map *map)
 	{
 		map->data[i] = (int *)malloc_wrap(sizeof(int) * map->width);
 		map->color[i] = (int *)malloc_wrap(sizeof(int) * map->width);
+		set_default_color(map->color[i], map->width);
 		j = -1;
 		while (map_str[i][++j] != NULL)
 		{
@@ -96,4 +98,13 @@ static void	size_check(char ***map_str, t_map *map)
 		}
 	}
 	map->height = i;
+}
+
+static void	set_default_color(int *color, int width)
+{
+	int	i;
+
+	i = -1;
+	while (++i < width)
+		color[i] = DEFAULT_COLOR;
 }
