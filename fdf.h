@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:39:02 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/26 21:45:05 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ typedef struct s_data
 	int		color;
 	int		shift_x;
 	int		shift_y;
-	int		rotate_x;
-	int		rotate_y;
-	int		rotate_z;
+	double	rotate_x;
+	double	rotate_y;
+	double	rotate_z;
 }	t_data;
 
 void	fdf(t_map *map);
@@ -69,5 +69,11 @@ void	draw_point(t_data *data, t_point p);
 
 // draw_line.c
 void	draw_line(t_data *data, t_point p1, t_point p2);
+
+// draw_map.c
+void	draw_map(t_data *data, t_map *map);
+
+// isometric.c
+void	isometric(t_data *data, t_map *map);
 
 #endif

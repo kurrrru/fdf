@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:52:15 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:33:55 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/26 22:15:20 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ COLOR_MAX"
 # define WIN_TITLE "fdf"
 # define IMG_HEIGHT 800
 # define IMG_WIDTH 800
+
+# define DEFAULT_COLOR 0x0033FFFF
+# define DEFAULT_COLOR_HIGH 0x00FF0000
+
+# define PI 3.14159265358979323846
 
 #endif

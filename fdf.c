@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:00:19 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:46:40 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/26 21:53:39 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,8 @@ void	fdf(t_map *map)
 	data.img = mlx_new_image_wrap(data.mlx, WIN_WIDTH, WIN_HEIGHT);
 	data.addr = (int *)mlx_get_data_addr(data.img, &data.bpp,
 			&data.size_l, &data.endian);
-	t_point	p1 = {100, 100, {0x00FF0000}};
-	t_point	p2 = {100, 200, {0x0000FF00}};
-	t_point	p3 = {200, 200, {0x000000FF}};
-	printf("p3: [%d, %d, %d, %d]\n", p3.color.trgb.t, p3.color.trgb.r, p3.color.trgb.g, p3.color.trgb.b);
-	draw_line(&data, p1, p2);
-	draw_line(&data, p2, p3);
-	draw_line(&data, p3, p1);
+	isometric(&data, map);
+	draw_map(&data, map);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
 	hook_close(&data);
 	mlx_loop(data.mlx);

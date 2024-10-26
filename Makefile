@@ -15,6 +15,8 @@ SRCS		=	main.c \
 				hook.c \
 				draw_line.c \
 				draw_point.c \
+				draw_map.c \
+				isometric.c \
 				fdf_math.c
 
 OBJS		=	$(SRCS:.c=.o)
