@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrap_file_manip.c                                  :+:      :+:    :+:   */
+/*   fdf_math.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:49:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 19:57:28 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/26 20:18:18 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/26 20:34:51 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wrap.h"
+#include "fdf_math.h"
 
-int	open_wrap(char *filename, int flags)
+int	fdf_abs(int n)
 {
-	int	fd;
-
-	fd = open(filename, flags);
-	if (fd == ERROR)
-	{
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
+	if (n < 0)
+		return (-n);
+	return (n);
 }
 
-void	close_wrap(int fd)
+int	fdf_max(int a, int b)
 {
-	if (close(fd) == ERROR)
-	{
-		perror("close");
-		exit(EXIT_FAILURE);
-	}
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int	fdf_min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+int	fdf_in_div(int p1, int p2, int i, int total)
+{
+	return (p1 + (p2 - p1) * i / total);
 }

@@ -6,11 +6,11 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:43:47 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/24 16:06:41 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/26 19:57:41 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "wrap.h"
 
 void	*mlx_init_wrap(void)
 {

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:53:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 14:22:39 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:03:57 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	parse_file(char *filename, t_map *map)
 		j = -1;
 		while (map_str[i][++j] != NULL)
 		{
-			atoi_check(map_str[i][j]);
+			atoi_check(map_str[i][j], map);
 			fdf_atoi(map_str[i][j], map, i, j);
 		}
 	}

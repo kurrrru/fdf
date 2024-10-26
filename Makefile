@@ -1,5 +1,6 @@
 NAME		=	fdf
 SRCS		=	main.c \
+				fdf.c \
 				param_check.c \
 				parse_map.c \
 				free_xd.c \
@@ -10,7 +11,11 @@ SRCS		=	main.c \
 				atox_check.c \
 				fdf_atoi.c \
 				fdf_atox.c \
-				map_init.c
+				map_init.c \
+				hook.c \
+				draw_line.c \
+				draw_point.c \
+				fdf_math.c
 
 OBJS		=	$(SRCS:.c=.o)
 

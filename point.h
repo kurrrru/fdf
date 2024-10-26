@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrap_file_manip.c                                  :+:      :+:    :+:   */
+/*   point.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:49:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 19:57:28 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/26 19:54:54 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/26 20:48:05 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wrap.h"
+#ifndef POINT_H
+# define POINT_H
 
-int	open_wrap(char *filename, int flags)
+typedef struct	s_trgb
 {
-	int	fd;
+	unsigned int	t : 8;
+	unsigned int	r : 8;
+	unsigned int	g : 8;
+	unsigned int	b : 8;
+}	t_trgb;
 
-	fd = open(filename, flags);
-	if (fd == ERROR)
-	{
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
-}
-
-void	close_wrap(int fd)
+typedef union	u_color
 {
-	if (close(fd) == ERROR)
-	{
-		perror("close");
-		exit(EXIT_FAILURE);
-	}
-}
+	int		color_int;
+	t_trgb	trgb;
+}	t_color;
+
+typedef struct	s_point
+{
+	int		x;
+	int		y;
+	t_color	color;
+}	t_point;
+
+#endif

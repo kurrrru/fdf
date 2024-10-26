@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrap_file_manip.c                                  :+:      :+:    :+:   */
+/*   fdf_math.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:49:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 19:57:28 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/26 20:18:41 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/26 20:27:52 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wrap.h"
+#ifndef FDF_MATH_H
+# define FDF_MATH_H
 
-int	open_wrap(char *filename, int flags)
-{
-	int	fd;
+int	fdf_abs(int n);
+int	fdf_max(int a, int b);
+int	fdf_min(int a, int b);
+int	fdf_in_div(int p1, int p2, int i, int total);
 
-	fd = open(filename, flags);
-	if (fd == ERROR)
-	{
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
-}
-
-void	close_wrap(int fd)
-{
-	if (close(fd) == ERROR)
-	{
-		perror("close");
-		exit(EXIT_FAILURE);
-	}
-}
+#endif
