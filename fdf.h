@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 22:27:40 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:47:54 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ typedef struct s_data
 	void	*win;
 	void	*img;
 	int		*addr;
-	int		bpp; // bits per pixel
-	int		size_l; // size of a line
-	int		endian; // endian
+	int		bpp;
+	int		size_l;
+	int		endian;
 	double	zoom;
 	int		color;
 	double	shift_x;

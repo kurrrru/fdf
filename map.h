@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:53:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:39:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:48:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,4 @@ typedef struct s_map
 // map_init.c
 t_map	*map_init(void);
 
-# endif
+#endif
