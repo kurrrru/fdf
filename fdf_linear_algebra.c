@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.h                                            :+:      :+:    :+:   */
+/*   fdf_linear_algebra.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 19:54:54 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 18:38:36 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/27 14:53:23 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/27 14:53:45 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_H
-# define POINT_H
+#include "fdf_math.h"
 
-typedef union	u_color
+void	matrix_multiply(double pos[3], double matrix[3][3])
 {
-	unsigned int	num;
-	unsigned char	trgb[4];
-}	t_color;
+	double	tmp[3];
+	int		i;
+	int		j;
 
-typedef struct	s_point
-{
-	int		x;
-	int		y;
-	t_color	color;
-}	t_point;
-
-#endif
+	i = -1;
+	while (++i < 3)
+	{
+		tmp[i] = 0;
+		j = -1;
+		while (++j < 3)
+			tmp[i] += pos[j] * matrix[j][i];
+	}
+	i = -1;
+	while (++i < 3)
+		pos[i] = tmp[i];
+}

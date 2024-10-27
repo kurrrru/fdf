@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 21:45:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:57:30 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,10 @@ void	draw_map(t_data *data, t_map *map);
 
 // isometric.c
 void	isometric(t_data *data, t_map *map);
+
+// rotate.c
+void	rotate_x(double pos[3], double angle);
+void	rotate_y(double pos[3], double angle);
+void	rotate_z(double pos[3], double angle);
 
 #endif
