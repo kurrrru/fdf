@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:52:15 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 22:15:20 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 19:40:31 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ COLOR_MAX"
 # define DEFAULT_COLOR_HIGH 0x00FF0000
 
 # define PI 3.14159265358979323846
+# define INF 1e9
 
 #endif

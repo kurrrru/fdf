@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:53:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 22:12:34 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 19:39:05 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ typedef struct s_map
 	int		height;
 	int		width;
 	int		color_flag;
-	int		max;
-	int		min;
+	int		z_max;
+	int		z_min;
 	t_point	**points;
+	double	x_max;
+	double	x_min;
+	double	y_max;
+	double	y_min;
 }	t_map;
 
 // map_init.c

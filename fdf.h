@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 14:57:30 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:27:40 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ typedef struct s_data
 	int		bpp; // bits per pixel
 	int		size_l; // size of a line
 	int		endian; // endian
-	int		zoom;
+	double	zoom;
 	int		color;
-	int		shift_x;
-	int		shift_y;
+	double	shift_x;
+	double	shift_y;
 	double	rotate_x;
 	double	rotate_y;
 	double	rotate_z;
@@ -76,9 +76,17 @@ void	draw_map(t_data *data, t_map *map);
 // isometric.c
 void	isometric(t_data *data, t_map *map);
 
+// isometric_subfunc.c
+void	isometric_init(t_data *data);
+void	small_endian_color(t_point *point);
+void	set_color(t_data *data, t_map *map, int i, int j);
+
 // rotate.c
 void	rotate_x(double pos[3], double angle);
 void	rotate_y(double pos[3], double angle);
 void	rotate_z(double pos[3], double angle);
+
+// shift_center.c
+void	shift_center(t_data *data, t_map *map);
 
 #endif

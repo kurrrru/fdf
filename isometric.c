@@ -6,25 +6,23 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 21:22:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 15:46:14 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:43:51 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static void	calc_coordinate(t_data *data, t_map *map, int i, int j);
-static void	shift_center(t_data *data, t_map *map);
+static void	size_adjust(t_data *data, t_map *map);
+static void	update_zoom(t_data *data, t_map *map);
+static void	update_size(t_data *data, t_map *map);
 
 void	isometric(t_data *data, t_map *map)
 {
 	int	i;
 	int	j;
-	int tmp;
 
-	data->rotate_x = -35.264 * PI / 180;
-	data->rotate_y = 0;
-	data->rotate_z = -45 * PI / 180;
-	data->zoom = fdf_max(fdf_min(WIN_WIDTH / map->width / 2, WIN_HEIGHT / map->height / 2), 1);
+	isometric_init(data);
 	map->points = malloc_wrap(sizeof(t_point *) * map->height);
 	i = -1;
 	while (++i < map->height)
@@ -37,23 +35,10 @@ void	isometric(t_data *data, t_map *map)
 			if (map->color_flag)
 				map->points[i][j].color.num = map->color[i][j];
 			else
-			{
-				map->points[i][j].color.trgb[0] = in_div(0x00, 0x00, map->data[i][j] - map->min, map->max - map->min);
-				map->points[i][j].color.trgb[1] = in_div(0xFF, 0x00, map->data[i][j] - map->min, map->max - map->min);
-				map->points[i][j].color.trgb[2] = in_div(0xFF, 0x70, map->data[i][j] - map->min, map->max - map->min);
-				map->points[i][j].color.trgb[3] = in_div(0xFF, 0x00, map->data[i][j] - map->min, map->max - map->min);
-				if (data->endian == 0)
-				{
-					tmp = map->points[i][j].color.trgb[0];
-					map->points[i][j].color.trgb[0] = map->points[i][j].color.trgb[3];
-					map->points[i][j].color.trgb[3] = tmp;
-					tmp = map->points[i][j].color.trgb[1];
-					map->points[i][j].color.trgb[1] = map->points[i][j].color.trgb[2];
-					map->points[i][j].color.trgb[2] = tmp;
-				}
-			}
+				set_color(data, map, i, j);
 		}
 	}
+	size_adjust(data, map);
 	shift_center(data, map);
 }
 
@@ -71,37 +56,59 @@ static void	calc_coordinate(t_data *data, t_map *map, int i, int j)
 	map->points[i][j].y = pos[1] * data->zoom;
 }
 
-static void	shift_center(t_data *data, t_map *map)
+static void	size_adjust(t_data *data, t_map *map)
 {
 	int	i;
 	int	j;
-	int	x_center;
-	int	y_center;
 
-	x_center = 0;
-	y_center = 0;
+	map->x_max = -INF;
+	map->x_min = INF;
+	map->y_max = -INF;
+	map->y_min = INF;
 	i = -1;
 	while (++i < map->height)
 	{
 		j = -1;
 		while (++j < map->width)
 		{
-			x_center += map->points[i][j].x;
-			y_center += map->points[i][j].y;
+			map->x_max = fdf_max_d(map->x_max, map->points[i][j].x);
+			map->x_min = fdf_min_d(map->x_min, map->points[i][j].x);
+			map->y_max = fdf_max_d(map->y_max, map->points[i][j].y);
+			map->y_min = fdf_min_d(map->y_min, map->points[i][j].y);
 		}
 	}
-	x_center /= map->height * map->width;
-	y_center /= map->height * map->width;
-	data->shift_x = WIN_WIDTH / 2 - x_center;
-	data->shift_y = WIN_HEIGHT / 2 - y_center;
+	update_zoom(data, map);
+	update_size(data, map);
+}
+
+static void	update_zoom(t_data *data, t_map *map)
+{
+	if (map->x_max - map->x_min == 0 && map->y_max - map->y_min == 0)
+		data->zoom = 1;
+	else if (map->x_max - map->x_min == 0)
+		data->zoom = WIN_HEIGHT * 0.8 / (map->y_max - map->y_min);
+	else if (map->y_max - map->y_min == 0)
+		data->zoom = WIN_WIDTH * 0.8 / (map->x_max - map->x_min);
+	else
+		data->zoom = fdf_min_d(WIN_WIDTH * 0.8 / (map->x_max - map->x_min),
+				WIN_HEIGHT * 0.8 / (map->y_max - map->y_min));
+}
+
+static void	update_size(t_data *data, t_map *map)
+{
+	int	i;
+	int	j;
+
 	i = -1;
 	while (++i < map->height)
 	{
 		j = -1;
 		while (++j < map->width)
 		{
-			map->points[i][j].x += data->shift_x;
-			map->points[i][j].y += data->shift_y;
+			map->points[i][j].x = (map->points[i][j].x - data->shift_x)
+				* data->zoom + data->shift_x;
+			map->points[i][j].y = (map->points[i][j].y - data->shift_y)
+				* data->zoom + data->shift_y;
 		}
 	}
 }

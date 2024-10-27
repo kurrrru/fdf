@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:54:54 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 18:38:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 19:43:00 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef union	u_color
 
 typedef struct	s_point
 {
-	int		x;
-	int		y;
+	double	x;
+	double	y;
 	t_color	color;
 }	t_point;
 

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:53:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 00:41:57 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 20:35:59 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	read_map(int fd, char ****map_str, int *map_size);
 static void	size_check(char ***map_str, t_map *map);
 static void	set_default_color(int *color, int width);
+static void	atoi_check_convert(const char *str, t_map *map, int i, int j);
 
 void	parse_file(char *filename, t_map *map)
 {
@@ -37,10 +38,7 @@ void	parse_file(char *filename, t_map *map)
 		set_default_color(map->color[i], map->width);
 		j = -1;
 		while (map_str[i][++j] != NULL)
-		{
-			atoi_check(map_str[i][j], map);
-			fdf_atoi(map_str[i][j], map, i, j);
-		}
+			atoi_check_convert(map_str[i][j], map, i, j);
 	}
 	free_3d(map_str);
 	close_wrap(fd);
@@ -107,4 +105,10 @@ static void	set_default_color(int *color, int width)
 	i = -1;
 	while (++i < width)
 		color[i] = DEFAULT_COLOR;
+}
+
+static void	atoi_check_convert(const char *str, t_map *map, int i, int j)
+{
+	atoi_check(str, map);
+	fdf_atoi(str, map, i, j);
 }

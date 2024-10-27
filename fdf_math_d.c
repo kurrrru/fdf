@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_map.c                                         :+:      :+:    :+:   */
+/*   fdf_math_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:44:02 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:59:14 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/27 19:42:35 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/27 19:59:04 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "fdf_math.h"
 
-void	draw_map(t_data *data, t_map *map)
+double	fdf_abs_d(double n)
 {
-	int	i;
-	int	j;
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
-	i = -1;
-	while (++i < map->height)
-	{
-		j = -1;
-		while (++j < map->width)
-		{
-			if (j + 1 < map->width)
-				draw_line(data, map->points[i][j], map->points[i][j + 1]);
-			if (i + 1 < map->height)
-				draw_line(data, map->points[i][j], map->points[i + 1][j]);
-		}
-	}
+double	fdf_max_d(double a, double b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+double	fdf_min_d(double a, double b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+double	in_div_d(double p1, double p2, int i, int total)
+{
+	if (total == 0)
+		return (p1);
+	return (p1 + (p2 - p1) * i / total);
 }
