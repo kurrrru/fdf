@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:01:28 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 14:42:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:11:19 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ void	free_map(t_map *map)
 	{
 		free(map->data[i]);
 		free(map->color[i]);
+		free(map->points[i]);
 	}
 	free(map->data);
 	free(map->color);
+	free(map->points);
 	free(map);
 }
