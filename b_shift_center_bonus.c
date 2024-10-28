@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_shift_center.c                                   :+:      :+:    :+:   */
+/*   b_shift_center_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 22:15:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/28 12:32:09 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 00:50:37 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "m_fdf.h"
+#include "b_fdf_bonus.h"
 
 static void	calc_center(t_map *map, double *x_center, double *y_center);
 

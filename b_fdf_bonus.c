@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:15 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:25:37 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:04:01 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ void	fdf(t_map *map)
 	data.img = mlx_new_image_wrap(data.mlx, WIN_WIDTH, WIN_HEIGHT);
 	data.addr = (int *)mlx_get_data_addr(data.img, &data.bpp,
 			&data.size_l, &data.endian);
+	data.map = map;
 	isometric(&data, map);
 	draw_map(&data, map);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
-	hook_close(&data);
+	hook(&data);
+	ft_putstr_fd(USAGE_TO_DISPLAY, STDOUT_FILENO);
 	mlx_loop(data.mlx);
 	mlx_destroy_display(data.mlx);
 	free(data.mlx);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_isometric_subfunc.c                              :+:      :+:    :+:   */
+/*   b_isometric_subfunc_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:20:42 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/28 12:20:42 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/29 00:48:51 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/29 00:48:59 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "m_fdf.h"
+#include "b_fdf_bonus.h"
 
 void	isometric_init(t_data *data)
 {

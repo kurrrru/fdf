@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_param_check.c                                    :+:      :+:    :+:   */
+/*   b_param_check_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:21:41 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/28 12:21:41 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/29 00:49:51 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/29 00:49:51 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "m_fdf.h"
+#include "b_fdf_bonus.h"
 
 static int	is_valid_extension(char *filename);
 static void	error_usage(void);

@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:43:56 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:19:00 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:05:23 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int	hook_rotate_x(t_data *data, int keycode)
 			data->map->points[i][j].z = pos[2];
 		}
 	}
-
+	map_update(data, data->map);
 	return (0);
 }
