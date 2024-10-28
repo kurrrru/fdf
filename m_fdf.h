@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/28 12:19:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:36:22 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,54 +39,54 @@ typedef struct s_data
 
 void	fdf(t_map *map);
 
-// param_check.c
+// m_param_check.c
 void	param_check(int argc, char **argv);
 
-// parse_file.c
+// m_parse_file.c
 void	parse_file(char *filename, t_map *map);
 
-// free_xd.c
+// m_free_xd.c
 void	free_3d(char ***xd);
 void	free_map(t_map *map);
 
-// atoi_check.c
+// m_atoi_check.c
 void	atoi_check(const char *str, t_map *map);
 
-// atox_check.c
+// m_atox_check.c
 void	atox_check(const char *str, int i);
 
-// fdf_atoi.c
+// m_fdf_atoi.c
 void	fdf_atoi(const char *str, t_map *map, int i, int j);
 
-// fdf_atox.c
+// m_fdf_atox.c
 void	fdf_atox(const char *str, t_map *map, int i, int j);
 
-// hook.c
+// m_hook.c
 void	hook_close(t_data *data);
 
-// draw_point.c
+// m_draw_point.c
 void	draw_point(t_data *data, t_point p);
 
-// draw_line.c
+// m_draw_line.c
 void	draw_line(t_data *data, t_point p1, t_point p2);
 
-// draw_map.c
+// m_draw_map.c
 void	draw_map(t_data *data, t_map *map);
 
-// isometric.c
+// m_isometric.c
 void	isometric(t_data *data, t_map *map);
 
-// isometric_subfunc.c
+// m_isometric_subfunc.c
 void	isometric_init(t_data *data);
 void	small_endian_color(t_point *point);
 void	set_color(t_data *data, t_map *map, int i, int j);
 
-// rotate.c
+// m_rotate.c
 void	rotate_x(double pos[3], double angle);
 void	rotate_y(double pos[3], double angle);
 void	rotate_z(double pos[3], double angle);
 
-// shift_center.c
+// m_shift_center.c
 void	shift_center(t_data *data, t_map *map);
 
 #endif
