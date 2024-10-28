@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:20:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/28 12:38:19 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 00:12:47 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,40 @@ COLOR_MAX"
 
 # define PI 3.14159265358979323846
 # define INF 1e9
+
+// Bonus
+# define USAGE_TO_DISPLAY "[Usage]\n\
+Zoom in/out: m/n\n\
+Move: arrow keys\n\
+Rotate x-axis: q/w\n\
+Rotate y-axis: a/s\n\
+Rotate z-axis: z/x\n\
+Change projection:\n\
+	Parallel: 1\n\
+	Isometric: 2\n\
+	Perspective: 3\n\
+????: ?\n\
+Exit: ESC\n"
+
+# define KEY_ZOOM_IN 109
+# define KEY_ZOOM_OUT 110
+# define KEY_MOVE_UP 65362
+# define KEY_MOVE_DOWN 65364
+# define KEY_MOVE_LEFT 65361
+# define KEY_MOVE_RIGHT 65363
+# define KEY_ROTATE_X_UP 113
+# define KEY_ROTATE_X_DOWN 119
+# define KEY_ROTATE_Y_UP 97
+# define KEY_ROTATE_Y_DOWN 115
+# define KEY_ROTATE_Z_UP 122
+# define KEY_ROTATE_Z_DOWN 120
+# define KEY_PARALLEL 49
+# define KEY_ISOMETRIC 50
+# define KEY_PERSPECTIVE 51
+# define KEY_QUESTION 47
+
+# define ZOOM_FACTOR 1.1
+# define MOVE_FACTOR 10
+# define ROTATE_ANGLE (0.5 * PI / 180)
 
 #endif

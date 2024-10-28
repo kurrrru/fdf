@@ -23,8 +23,36 @@ SRCS		=	m_main.c \
 				m_fdf_linear_algebra.c \
 				m_rotate.c \
 				m_shift_center.c
-
 OBJS		=	$(SRCS:.c=.o)
+
+BONUS_SRCS	=	b_atoi_check_bonus.c \
+				b_atox_check_bonus.c \
+				b_draw_line_bonus.c \
+				b_draw_map_bonus.c \
+				b_draw_point_bonus.c \
+				b_fdf_atoi_bonus.c \
+				b_fdf_atox_bonus.c \
+				b_fdf_bonus.c \
+				b_fdf_linear_algebra_bonus.c \
+				b_fdf_math_bonus.c \
+				b_fdf_math_d_bonus.c \
+				b_free_xd_bonus.c \
+				b_hook_bonus.c \
+				b_isometric_bonus.c \
+				b_isometric_subfunc_bonus.c \
+				b_main_bonus.c \
+				b_map_init_bonus.c \
+				b_param_check_bonus.c \
+				b_parse_map_bonus.c \
+				b_rotate_bonus.c \
+				b_shift_center_bonus.c \
+				b_wrap_file_manip_bonus.c \
+				b_wrap_memory_bonus.c \
+				b_wrap_mlx_bonus.c \
+				b_map_update_bonus.c \
+				b_hook_rotate_bonus.c
+
+BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
 # Libft
 LIBFT_DIR	=	libft
@@ -50,6 +78,11 @@ RM			=	rm -f
 
 .DEFAULT_GOAL = all
 
+ifeq ($(filter bonus,$(MAKECMDGOALS)),bonus)
+	SRCS = $(BONUS)
+	OBJS = $(BONUS_OBJS)
+endif
+
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) -o $(NAME) $(OBJS) $(LFLAGS)
 
@@ -63,7 +96,7 @@ $(MLX):
 	make -C $(MLX_DIR)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 	make -C $(LIBFT_DIR) clean
 	make -C $(MLX_DIR) clean
 
@@ -75,4 +108,6 @@ re: fclean all
 
 all: $(NAME)
 
-.PHONY: all clean fclean re
+bonus: $(NAME)
+
+.PHONY: all clean fclean re bonus
