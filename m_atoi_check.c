@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_check.c                                       :+:      :+:    :+:   */
+/*   m_atoi_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 09:34:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 00:29:53 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:17:01 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:17:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 static void	space_sign_skip(const char *str, int *i, long *sign);
 static void	error_atoi_check(char *str);

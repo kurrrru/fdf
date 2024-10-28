@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_math.c                                         :+:      :+:    :+:   */
+/*   m_fdf_math_d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 20:18:18 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 21:54:49 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:18:34 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:18:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf_math.h"
+#include "m_fdf_math.h"
 
-int	fdf_abs(int n)
+double	fdf_abs_d(double n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
 }
 
-int	fdf_max(int a, int b)
+double	fdf_max_d(double a, double b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-int	fdf_min(int a, int b)
+double	fdf_min_d(double a, double b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-int	in_div(int p1, int p2, int i, int total)
+double	in_div_d(double p1, double p2, int i, int total)
 {
 	if (total == 0)
 		return (p1);

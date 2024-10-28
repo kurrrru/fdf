@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   include.h                                          :+:      :+:    :+:   */
+/*   m_include.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 19:52:15 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:40:31 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:20:26 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:20:27 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDE_H
-# define INCLUDE_H
+#ifndef M_INCLUDE_H
+# define M_INCLUDE_H
 
 # include <stdio.h>
 # include <stdlib.h>

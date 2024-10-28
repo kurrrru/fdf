@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_math_d.c                                       :+:      :+:    :+:   */
+/*   m_point.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 19:42:35 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:59:04 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:22:02 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:22:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf_math.h"
+#ifndef M_POINT_H
+# define M_POINT_H
 
-double	fdf_abs_d(double n)
+typedef union u_color
 {
-	if (n < 0)
-		return (-n);
-	return (n);
-}
+	unsigned int	num;
+	unsigned char	trgb[4];
+}	t_color;
 
-double	fdf_max_d(double a, double b)
+typedef struct s_point
 {
-	if (a > b)
-		return (a);
-	return (b);
-}
+	double	x;
+	double	y;
+	t_color	color;
+}	t_point;
 
-double	fdf_min_d(double a, double b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-double	in_div_d(double p1, double p2, int i, int total)
-{
-	if (total == 0)
-		return (p1);
-	return (p1 + (p2 - p1) * i / total);
-}
+#endif

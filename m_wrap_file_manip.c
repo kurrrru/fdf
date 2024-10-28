@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   m_wrap_file_manip.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 20:24:34 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:00:40 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:22:26 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:22:27 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_wrap.h"
 
-int	main(int argc, char **argv)
+int	open_wrap(char *filename, int flags)
 {
-	t_map	*map;
+	int	fd;
 
-	param_check(argc, argv);
-	map = map_init();
-	parse_file(argv[1], map);
-	fdf(map);
-	free_map(map);
-	return (EXIT_SUCCESS);
+	fd = open(filename, flags);
+	if (fd == ERROR)
+	{
+		perror("open");
+		exit(EXIT_FAILURE);
+	}
+	return (fd);
+}
+
+void	close_wrap(int fd)
+{
+	if (close(fd) == ERROR)
+	{
+		perror("close");
+		exit(EXIT_FAILURE);
+	}
 }

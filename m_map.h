@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrap_file_manip.c                                  :+:      :+:    :+:   */
+/*   m_map.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:49:27 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/26 19:57:28 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:21:24 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:27:19 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wrap.h"
+#ifndef M_MAP_H
+# define M_MAP_H
 
-int	open_wrap(char *filename, int flags)
+# include "m_include.h"
+# include "m_point.h"
+
+typedef struct s_map
 {
-	int	fd;
+	int		**data;
+	int		**color;
+	int		height;
+	int		width;
+	int		color_flag;
+	int		z_max;
+	int		z_min;
+	t_point	**points;
+	double	x_max;
+	double	x_min;
+	double	y_max;
+	double	y_min;
+}	t_map;
 
-	fd = open(filename, flags);
-	if (fd == ERROR)
-	{
-		perror("open");
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
-}
+// m_map_init.c
+t_map	*map_init(void);
 
-void	close_wrap(int fd)
-{
-	if (close(fd) == ERROR)
-	{
-		perror("close");
-		exit(EXIT_FAILURE);
-	}
-}
+#endif

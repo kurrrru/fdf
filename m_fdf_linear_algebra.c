@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.h                                              :+:      :+:    :+:   */
+/*   m_fdf_linear_algebra.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 19:53:31 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 22:48:12 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:18:24 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:18:24 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_H
-# define MAP_H
+#include "m_fdf_math.h"
 
-# include "include.h"
-# include "point.h"
-
-typedef struct s_map
+void	matrix_multiply(double pos[3], double matrix[3][3])
 {
-	int		**data;
-	int		**color;
-	int		height;
-	int		width;
-	int		color_flag;
-	int		z_max;
-	int		z_min;
-	t_point	**points;
-	double	x_max;
-	double	x_min;
-	double	y_max;
-	double	y_min;
-}	t_map;
+	double	tmp[3];
+	int		i;
+	int		j;
 
-// map_init.c
-t_map	*map_init(void);
-
-#endif
+	i = -1;
+	while (++i < 3)
+	{
+		tmp[i] = 0;
+		j = -1;
+		while (++j < 3)
+			tmp[i] += pos[j] * matrix[j][i];
+	}
+	i = -1;
+	while (++i < 3)
+		pos[i] = tmp[i];
+}

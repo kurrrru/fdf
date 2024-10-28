@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_linear_algebra.c                               :+:      :+:    :+:   */
+/*   m_map_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 14:53:23 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 14:53:45 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:21:10 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:21:10 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf_math.h"
+#include "m_fdf.h"
 
-void	matrix_multiply(double pos[3], double matrix[3][3])
+t_map	*map_init(void)
 {
-	double	tmp[3];
-	int		i;
-	int		j;
+	t_map	*map;
 
-	i = -1;
-	while (++i < 3)
-	{
-		tmp[i] = 0;
-		j = -1;
-		while (++j < 3)
-			tmp[i] += pos[j] * matrix[j][i];
-	}
-	i = -1;
-	while (++i < 3)
-		pos[i] = tmp[i];
+	map = (t_map *)malloc_wrap(sizeof(t_map));
+	map->width = 0;
+	map->height = 0;
+	map->color_flag = FALSE;
+	map->data = NULL;
+	map->color = NULL;
+	map->z_max = INT_MIN;
+	map->z_min = INT_MAX;
+	return (map);
 }

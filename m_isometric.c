@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isometric.c                                        :+:      :+:    :+:   */
+/*   m_isometric.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:22:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 22:43:51 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:20:52 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:30:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 static void	calc_coordinate(t_data *data, t_map *map, int i, int j);
 static void	size_adjust(t_data *data, t_map *map);
@@ -111,4 +111,8 @@ static void	update_size(t_data *data, t_map *map)
 				* data->zoom + data->shift_y;
 		}
 	}
+	map->x_max = (map->x_max - data->shift_x) * data->zoom + data->shift_x;
+	map->x_min = (map->x_min - data->shift_x) * data->zoom + data->shift_x;
+	map->y_max = (map->y_max - data->shift_y) * data->zoom + data->shift_y;
+	map->y_min = (map->y_min - data->shift_y) * data->zoom + data->shift_y;
 }

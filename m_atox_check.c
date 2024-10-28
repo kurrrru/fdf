@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atox_check.c                                       :+:      :+:    :+:   */
+/*   m_atox_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 09:40:03 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 14:38:32 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:17:12 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:17:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 static void	error_atox_check(char *str);
 static void	space_skip(const char *str, int *i);

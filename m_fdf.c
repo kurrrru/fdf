@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   m_fdf.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 20:00:19 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:57:44 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:19:15 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:19:16 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 void	fdf(t_map *map)
 {
@@ -26,4 +26,6 @@ void	fdf(t_map *map)
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
 	hook_close(&data);
 	mlx_loop(data.mlx);
+	mlx_destroy_display(data.mlx);
+	free(data.mlx);
 }

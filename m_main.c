@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_init.c                                         :+:      :+:    :+:   */
+/*   m_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 14:42:12 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 19:38:33 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:21:02 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:21:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
-t_map	*map_init(void)
+int	main(int argc, char **argv)
 {
 	t_map	*map;
 
-	map = (t_map *)malloc_wrap(sizeof(t_map));
-	map->width = 0;
-	map->height = 0;
-	map->color_flag = FALSE;
-	map->data = NULL;
-	map->color = NULL;
-	map->z_max = INT_MIN;
-	map->z_min = INT_MAX;
-	return (map);
+	param_check(argc, argv);
+	map = map_init();
+	parse_file(argv[1], map);
+	fdf(map);
+	free_map(map);
+	return (EXIT_SUCCESS);
 }

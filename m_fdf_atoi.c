@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_atoi.c                                         :+:      :+:    :+:   */
+/*   m_fdf_atoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 19:07:25 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/25 19:07:25 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:18:04 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:18:04 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 void	fdf_atoi(const char *str, t_map *map, int i, int j)
 {

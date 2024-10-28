@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_xd.c                                          :+:      :+:    :+:   */
+/*   m_fdf_math.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 18:01:28 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 23:11:19 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:18:52 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:19:02 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#ifndef M_FDF_MATH_H
+# define M_FDF_MATH_H
 
-void	free_3d(char ***p)
-{
-	int	i;
-	int	j;
+int		fdf_abs(int n);
+int		fdf_max(int a, int b);
+int		fdf_min(int a, int b);
+int		in_div(int p1, int p2, int i, int total);
 
-	i = -1;
-	while (p[++i] != NULL)
-	{
-		j = -1;
-		while (p[i][++j] != NULL)
-			free(p[i][j]);
-		free(p[i]);
-	}
-	free(p);
-}
+double	fdf_abs_d(double n);
+double	fdf_max_d(double a, double b);
+double	fdf_min_d(double a, double b);
+double	in_div_d(double p1, double p2, int i, int total);
 
-void	free_map(t_map *map)
-{
-	int	i;
+void	matrix_multiply(double pos[3], double matrix[3][3]);
 
-	i = -1;
-	while (++i < map->height)
-	{
-		free(map->data[i]);
-		free(map->color[i]);
-		free(map->points[i]);
-	}
-	free(map->data);
-	free(map->color);
-	free(map->points);
-	free(map);
-}
+#endif

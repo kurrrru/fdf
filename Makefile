@@ -1,28 +1,28 @@
 NAME		=	fdf
-SRCS		=	main.c \
-				fdf.c \
-				param_check.c \
-				parse_map.c \
-				free_xd.c \
-				wrap_file_manip.c \
-				wrap_memory.c \
-				wrap_mlx.c \
-				atoi_check.c \
-				atox_check.c \
-				fdf_atoi.c \
-				fdf_atox.c \
-				map_init.c \
-				hook.c \
-				draw_line.c \
-				draw_point.c \
-				draw_map.c \
-				isometric.c \
-				isometric_subfunc.c \
-				fdf_math.c \
-				fdf_math_d.c \
-				fdf_linear_algebra.c \
-				rotate.c \
-				shift_center.c
+SRCS		=	m_main.c \
+				m_fdf.c \
+				m_param_check.c \
+				m_parse_map.c \
+				m_free_xd.c \
+				m_wrap_file_manip.c \
+				m_wrap_memory.c \
+				m_wrap_mlx.c \
+				m_atoi_check.c \
+				m_atox_check.c \
+				m_fdf_atoi.c \
+				m_fdf_atox.c \
+				m_map_init.c \
+				m_hook.c \
+				m_draw_line.c \
+				m_draw_point.c \
+				m_draw_map.c \
+				m_isometric.c \
+				m_isometric_subfunc.c \
+				m_fdf_math.c \
+				m_fdf_math_d.c \
+				m_fdf_linear_algebra.c \
+				m_rotate.c \
+				m_shift_center.c
 
 OBJS		=	$(SRCS:.c=.o)
 

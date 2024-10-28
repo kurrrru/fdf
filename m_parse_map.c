@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_map.c                                        :+:      :+:    :+:   */
+/*   m_parse_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:53:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 20:35:59 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:21:49 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:21:49 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "m_fdf.h"
 
 static void	read_map(int fd, char ****map_str, int *map_size);
 static void	size_check(char ***map_str, t_map *map);

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   m_fdf.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 20:24:29 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/27 22:47:54 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/28 12:19:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef M_FDF_H
+# define M_FDF_H
 
-# include "include.h"
-# include "map.h"
-# include "point.h"
-# include "wrap.h"
-# include "fdf_math.h"
+# include "m_include.h"
+# include "m_map.h"
+# include "m_point.h"
+# include "m_wrap.h"
+# include "m_fdf_math.h"
 
 typedef struct s_data
 {
