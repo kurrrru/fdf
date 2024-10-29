@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:03:10 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:12:07 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	rotate_y(double pos[3], double angle);
 void	rotate_z(double pos[3], double angle);
 
 // b_shift_center_bonus.c
-void	shift_center(t_data *data, t_map *map);
+void	shift_center(t_map *map);
 
 // Bonus
 // b_hook_rotate_bonus.c

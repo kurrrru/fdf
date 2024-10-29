@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:59 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 19:45:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:10:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ static int	cross_hook(t_data *data)
 
 static int	loop_hook(t_data *data)
 {
-	(void)data;
 	if (data->win != NULL)
 	{
 		map_update(data, data->map);

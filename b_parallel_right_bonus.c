@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 19:55:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 20:05:41 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:13:10 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	right_view(t_data *data, t_map *map)
 		}
 	}
 	size_adjust(data, map);
-	shift_center(data, map);
+	shift_center(map);
 }
 
 static void	right_init(t_data *data)
