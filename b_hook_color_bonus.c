@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:52:07 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 19:12:28 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:21:31 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	hook_color(t_data *data)
 	return (0);
 }
 
-int hook_color_update(t_data *data)
+int	hook_color_update(t_data *data)
 {
 	int	i;
 

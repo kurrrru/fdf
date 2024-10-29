@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:49:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 18:50:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:21:46 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	hook_zoom(t_data *data, int keycode)
 		while (++j < data->map->width)
 		{
 			data->map->points[i][j].x = (data->map->points[i][j].x
-					- WIN_WIDTH / 2)* zoom + WIN_WIDTH / 2;
+					- WIN_WIDTH / 2) * zoom + WIN_WIDTH / 2;
 			data->map->points[i][j].y = (data->map->points[i][j].y
 					- WIN_HEIGHT / 2) * zoom + WIN_HEIGHT / 2;
 		}

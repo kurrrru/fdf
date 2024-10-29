@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:59 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:10:12 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:19:50 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,11 @@ static int	hook_esc(t_data *data);
 static int	cross_hook(t_data *data);
 static int	loop_hook(t_data *data);
 
-static int key_hook2(int keycode, t_data *data)
-{
-	if (keycode == KEY_ROTATE_X_UP || keycode == KEY_ROTATE_X_DOWN)
-		return (hook_rotate_x(data, keycode));
-	else if (keycode == KEY_ROTATE_Y_UP || keycode == KEY_ROTATE_Y_DOWN)
-		return (hook_rotate_y(data, keycode));
-	else if (keycode == KEY_ROTATE_Z_UP || keycode == KEY_ROTATE_Z_DOWN)
-		return (hook_rotate_z(data, keycode));
-	else if (keycode == KEY_ZOOM_IN || keycode == KEY_ZOOM_OUT)
-		return (hook_zoom(data, keycode));
-	else if (keycode == KEY_MOVE_UP || keycode == KEY_MOVE_DOWN
-		|| keycode == KEY_MOVE_LEFT || keycode == KEY_MOVE_RIGHT)
-		return (hook_move(data, keycode));
-	else if (keycode == KEY_QUESTION)
-		return (hook_color(data));
-	return (0);
-}
-
 void	hook(t_data *data)
 {
 	mlx_key_hook(data->win, key_hook, data);
 	mlx_hook(data->win, DestroyNotify, 0, cross_hook, data);
-	mlx_hook(data->win, KeyPress, KeyPressMask, key_hook2, data); // 2: key press 0: key release
+	mlx_hook(data->win, KeyPress, KeyPressMask, key_hook_loop, data);
 	mlx_loop_hook(data->mlx, loop_hook, data);
 }
 

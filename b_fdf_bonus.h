@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:12:07 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:20:39 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_data
 void	fdf(t_map *map);
 
 // b_param_check_bonus.c
-int	param_check(int argc, char **argv);
+int		param_check(int argc, char **argv);
 
 // b_parse_file_bonus.c
 void	parse_file(char *filename, t_map *map);
@@ -123,5 +123,8 @@ void	calc_coordinate(t_data *data, t_map *map, int i, int j);
 
 // b_size_adjust_bonus.c
 void	size_adjust(t_data *data, t_map *map);
+
+// b_key_hook_loop_bonus.c
+int		key_hook_loop(int keycode, t_data *data);
 
 #endif
