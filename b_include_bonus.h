@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:20:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:44:45 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:44:53 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,12 @@ Move: arrow keys\n\
 Rotate x-axis: q/w\n\
 Rotate y-axis: a/s\n\
 Rotate z-axis: z/x\n\
-Change projection:\n\
-	Parallel: 1\n\
-	Isometric: 2\n\
-	Perspective: 3\n\
-????: ?\n\
+Change view:\n\
+  Front view: 1\n\
+  Top view: 2\n\
+  Right view: 3\n\
+  Isometric view: 4\n\
+????: o\n\
 Exit: ESC\n"
 
 # define KEY_ZOOM_IN 109
@@ -95,10 +96,11 @@ Exit: ESC\n"
 # define KEY_ROTATE_Y_DOWN 115
 # define KEY_ROTATE_Z_UP 122
 # define KEY_ROTATE_Z_DOWN 120
-# define KEY_PARALLEL 49
-# define KEY_ISOMETRIC 50
-# define KEY_PERSPECTIVE 51
-# define KEY_QUESTION 47
+# define KEY_FRONT 49
+# define KEY_TOP 50
+# define KEY_RIGHT 51
+# define KEY_ISOMETRIC 52
+# define KEY_QUESTION 111
 
 # define ZOOM_FACTOR 1.1
 # define MOVE_FACTOR 10

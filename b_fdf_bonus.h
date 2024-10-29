@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:08:42 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 19:58:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ typedef struct s_data
 	int		endian;
 	double	zoom;
 	int		color;
-	double	shift_x;
-	double	shift_y;
 	double	rotate_x;
 	double	rotate_y;
 	double	rotate_z;
@@ -78,9 +76,7 @@ void	draw_map(t_data *data, t_map *map);
 // b_isometric_bonus.c
 void	isometric(t_data *data, t_map *map);
 
-// b_isometric_subfunc_bonus.c
-void	isometric_init(t_data *data);
-void	small_endian_color(t_point *point);
+// b_set_color_bonus.c
 void	set_color(t_data *data, t_map *map, int i, int j);
 
 // b_rotate_bonus.c
@@ -94,19 +90,38 @@ void	shift_center(t_data *data, t_map *map);
 // Bonus
 // b_hook_rotate_bonus.c
 int		hook_rotate_x(t_data *data, int keycode);
-// int		hook_rotate_y(t_data *data, int keycode);
-// int		hook_rotate_z(t_data *data, int keycode);
+int		hook_rotate_y(t_data *data, int keycode);
+int		hook_rotate_z(t_data *data, int keycode);
 
 // b_hook_zoom_bonus.c
-// int		hook_zoom(t_data *data, int keycode);
+int		hook_zoom(t_data *data, int keycode);
 
 // b_hook_move_bonus.c
-// int		hook_move(t_data *data, int keycode);
+int		hook_move(t_data *data, int keycode);
 
 // b_hook_color_bonus.c
-// int		hook_color(t_data *data, int keycode);
+int		hook_color(t_data *data);
+int		hook_color_update(t_data *data);
 
 // b_map_update_bonus.c
 void	map_update(t_data *data, t_map *map);
+
+// b_size_adjust_bonus.c
+void	size_adjust(t_data *data, t_map *map);
+
+// b_parallel_front_bonus.c
+void	front_view(t_data *data, t_map *map);
+
+// b_parallel_top_bonus.c
+void	top_view(t_data *data, t_map *map);
+
+// b_parallel_right_bonus.c
+void	right_view(t_data *data, t_map *map);
+
+// b_calc_coordinate_bonus.c
+void	calc_coordinate(t_data *data, t_map *map, int i, int j);
+
+// b_size_adjust_bonus.c
+void	size_adjust(t_data *data, t_map *map);
 
 #endif

@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_map_update_bonus.c                               :+:      :+:    :+:   */
+/*   b_hook_color_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 00:07:58 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 15:29:55 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/29 18:52:07 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/29 19:12:28 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_fdf_bonus.h"
 
-void	map_update(t_data *data, t_map *map)
+int	hook_color(t_data *data)
 {
-	ft_bzero(data->addr, WIN_WIDTH * WIN_HEIGHT * sizeof(int));
-	draw_map(data, map);
+	data->color = !data->color;
+	return (0);
+}
+
+int hook_color_update(t_data *data)
+{
+	int	i;
+
+	if (!data->color)
+		return (0);
+	i = -1;
+	while (++i < WIN_HEIGHT * WIN_WIDTH)
+		data->addr[i] ^= 0x00FFFFFF;
+	data->color = 0;
+	return (0);
 }

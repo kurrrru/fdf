@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_isometric_bonus.c                                :+:      :+:    :+:   */
+/*   b_parallel_top_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:20:52 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 20:06:50 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/29 19:56:03 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/29 20:06:21 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_fdf_bonus.h"
 
-static void	isometric_init(t_data *data);
+static void	top_init(t_data *data);
 
-void	isometric(t_data *data, t_map *map)
+void	top_view(t_data *data, t_map *map)
 {
 	int	i;
 	int	j;
 
-	isometric_init(data);
+	top_init(data);
 	if (map->points == NULL)
 		map->points = malloc_wrap(sizeof(t_point *) * map->height);
 	i = -1;
@@ -41,10 +41,9 @@ void	isometric(t_data *data, t_map *map)
 	shift_center(data, map);
 }
 
-static void	isometric_init(t_data *data)
+static void	top_init(t_data *data)
 {
-	data->rotate_x = -acos(1 / sqrt(3));
+	data->rotate_x = 0;
 	data->rotate_y = 0;
-	data->rotate_z = -45 * PI / 180;
-	data->color = FALSE;
+	data->rotate_z = 0;
 }

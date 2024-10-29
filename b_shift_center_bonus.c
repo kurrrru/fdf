@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 22:15:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:50:37 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:29:56 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	shift_center(t_data *data, t_map *map)
 	double	y_center;
 
 	calc_center(map, &x_center, &y_center);
-	data->shift_x += WIN_WIDTH / 2 - x_center;
-	data->shift_y += WIN_HEIGHT / 2 - y_center;
 	i = -1;
 	while (++i < map->height)
 	{
@@ -34,10 +32,7 @@ void	shift_center(t_data *data, t_map *map)
 			map->points[i][j].y += WIN_HEIGHT / 2 - y_center;
 		}
 	}
-	map->x_max += WIN_WIDTH / 2 - x_center;
-	map->x_min += WIN_WIDTH / 2 - x_center;
-	map->y_max += WIN_HEIGHT / 2 - y_center;
-	map->y_min += WIN_HEIGHT / 2 - y_center;
+	(void)data;
 }
 
 static void	calc_center(t_map *map, double *x_center, double *y_center)

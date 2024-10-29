@@ -39,7 +39,7 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				b_free_xd_bonus.c \
 				b_hook_bonus.c \
 				b_isometric_bonus.c \
-				b_isometric_subfunc_bonus.c \
+				b_set_color_bonus.c \
 				b_main_bonus.c \
 				b_map_init_bonus.c \
 				b_param_check_bonus.c \
@@ -50,7 +50,15 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				b_wrap_memory_bonus.c \
 				b_wrap_mlx_bonus.c \
 				b_map_update_bonus.c \
-				b_hook_rotate_bonus.c
+				b_hook_rotate_bonus.c \
+				b_hook_zoom_bonus.c \
+				b_hook_move_bonus.c \
+				b_hook_color_bonus.c \
+				b_parallel_front_bonus.c \
+				b_parallel_top_bonus.c \
+				b_parallel_right_bonus.c \
+				b_calc_coordinate_bonus.c \
+				b_size_adjust_bonus.c
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
