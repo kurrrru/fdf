@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:38 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:17:57 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:23:14 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ This program only supports text-based STL files.
 void	stl(char *filename)
 {
 	(void)filename;
+	ft_putstr_fd(filename, STDERR_FILENO);
 }

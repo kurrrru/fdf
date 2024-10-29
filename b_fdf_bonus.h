@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:20:39 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:24:10 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "b_point_bonus.h"
 # include "b_wrap_bonus.h"
 # include "b_fdf_math_bonus.h"
+# include "bs_stl_bonus.h"
 
 typedef struct s_data
 {
