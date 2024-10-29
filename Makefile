@@ -60,7 +60,8 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				b_calc_coordinate_bonus.c \
 				b_size_adjust_bonus.c \
 				b_key_hook_loop_bonus.c \
-				bs_stl_bonus.c
+				bs_stl_bonus.c \
+				bs_read_bonus.c
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 

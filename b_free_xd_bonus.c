@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:26:38 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:26:42 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 01:16:32 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ void	free_3d(char ***p)
 			free(p[i][j]);
 		free(p[i]);
 	}
+	free(p);
+}
+
+void	free_2d(char **p)
+{
+	int	i;
+
+	i = -1;
+	while (p[++i] != NULL)
+		free(p[i]);
 	free(p);
 }
 

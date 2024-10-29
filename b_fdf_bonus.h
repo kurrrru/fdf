@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:24:10 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 01:16:45 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	parse_file(char *filename, t_map *map);
 
 // b_free_xd_bonus.c
 void	free_3d(char ***xd);
+void	free_2d(char **xd);
 void	free_map(t_map *map);
 
 // b_atoi_check_bonus.c
