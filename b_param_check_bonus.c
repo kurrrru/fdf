@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:49:51 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 00:49:51 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:03:53 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ static int	is_valid_extension(char *filename);
 static void	error_usage(void);
 static void	error_extension(void);
 
-void	param_check(int argc, char **argv)
+int	param_check(int argc, char **argv)
 {
+	int	ret;
+
 	if (argc != PROPER_ARGC)
 		error_usage();
-	if (!is_valid_extension(argv[1]))
+	ret = is_valid_extension(argv[1]);
+	if (ret == FALSE)
 		error_extension();
+	return (ret);
 }
 
 static int	is_valid_extension(char *filename)
@@ -35,6 +39,8 @@ static int	is_valid_extension(char *filename)
 	suffix = filename + len - PROPER_EXTENSION_LEN;
 	if (ft_strncmp(suffix, PROPER_EXTENSION, PROPER_EXTENSION_LEN) == 0)
 		return (TRUE);
+	if (ft_strncmp(suffix, STL_FILE_EXTENSION, STL_FILE_EXTENSION_LEN) == 0)
+		return (STL_FLAG);
 	return (FALSE);
 }
 

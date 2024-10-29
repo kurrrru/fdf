@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:20:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 19:44:53 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:04:11 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define PROPER_EXTENSION ".fdf"
 # define PROPER_EXTENSION_LEN 4
 # define MSG_EXTENSION_ERROR "Extension Error: \
-The extension of the file must be \".fdf\""
+The extension of the file must be \".fdf\" or \".stl\""
 # define MSG_REALLOC_SIZE_ERROR "realloc_wrap: new_size must be \
 greater than old_size"
 # define MSG_WIDTH_NOT_EQUAL "parse_file: The width of the map is not constant"
@@ -105,5 +105,9 @@ Exit: ESC\n"
 # define ZOOM_FACTOR 1.1
 # define MOVE_FACTOR 10
 # define ROTATE_ANGLE (1.5 * PI / 180)
+
+# define STL_FLAG 2
+# define STL_FILE_EXTENSION ".stl"
+# define STL_FILE_EXTENSION_LEN 4
 
 #endif

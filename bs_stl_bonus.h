@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_main_bonus.c                                     :+:      :+:    :+:   */
+/*   bs_stl_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:21:02 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:07:38 by nkawaguc         ###   ########.fr       */
+/*   Created: 2024/10/29 23:05:48 by nkawaguc          #+#    #+#             */
+/*   Updated: 2024/10/29 23:06:43 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "b_fdf_bonus.h"
+#ifndef BS_STL_BONUS_H
+# define BS_STL_BONUS_H
 
-int	main(int argc, char **argv)
-{
-	int		ret;
-	t_map	*map;
+# include "b_include_bonus.h"
+# include "b_point_bonus.h"
 
-	ret = param_check(argc, argv);
-	if (ret == STL_FLAG)
-	{
-		stl(argv[1]);
-	}
-	else
-	{
-		map = map_init();
-		parse_file(argv[1], map);
-		fdf(map);
-		free_map(map);
-	}
-	return (EXIT_SUCCESS);
-}
+void	stl(char *filename);
+
+#endif
