@@ -66,7 +66,11 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				bs_draw_tri_bonus.c \
 				bs_draw_stl_bonus.c \
 				bs_hook_bonus.c \
-				bs_stl_size_adjust_bonus.c
+				bs_size_adjust_bonus.c \
+				bs_hook_move_bonus.c \
+				bs_hook_rotate_bonus.c \
+				bs_hook_zoom_bonus.c \
+				bs_key_hook_loop_bonus.c
 
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
@@ -87,8 +91,8 @@ DEBUG		=	-fsanitize=address
 LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd
 CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
 
-CFLAGS		+=	$(DEBUG)
-LFLAGS		+=	$(DEBUG)
+# CFLAGS		+=	$(DEBUG)
+# LFLAGS		+=	$(DEBUG)
 
 # Remove command
 RM			=	rm -f
