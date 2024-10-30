@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bs_stl_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 12:14:55 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:33:00 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,7 @@ void	draw_tri(t_stldata *stldata, t_tri *tri);
 void	stl_draw_point(t_stldata *stldata, t_point p);
 
 void	draw_stl(t_stldata *stldata);
+
+void	stl_hook(t_stldata *stldata);
 
 #endif
