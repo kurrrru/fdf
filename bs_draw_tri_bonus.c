@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:56:53 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 18:00:40 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 19:18:03 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@ void	draw_tri(t_stldata *stldata, t_tri *tri)
 	int i;
 	int j;
 
-	int zoom = 2;
-	tri->p[0].x *= zoom;
-	tri->p[0].y *= zoom;
-	tri->p[0].z *= zoom;
-	tri->p[1].x *= zoom;
-	tri->p[1].y *= zoom;
-	tri->p[1].z *= zoom;
-	tri->p[2].x *= zoom;
-	tri->p[2].y *= zoom;
-	tri->p[2].z *= zoom;
 	step[0] = fdf_max(fdf_abs(tri->p[1].x - tri->p[0].x),
 			fdf_abs(tri->p[1].y - tri->p[0].y)) + 1;
 	step[1] = fdf_max(fdf_abs(tri->p[2].x - tri->p[0].x),
