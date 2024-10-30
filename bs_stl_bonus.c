@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:38 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 01:46:34 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:16:47 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,17 @@ void	stl(char *filename)
 			printf("  Point %d: x=%f, y=%f, z=%f\n", j, stldata.tris[i].p[j].x, stldata.tris[i].p[j].y, stldata.tris[i].p[j].z);
 		}
 	}
+	stldata.mlx = mlx_init_wrap();
+	stldata.win = mlx_new_window_wrap(stldata.mlx, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE);
+	stldata.img = mlx_new_image_wrap(stldata.mlx, WIN_WIDTH, WIN_HEIGHT);
+	stldata.addr = (int *)mlx_get_data_addr(stldata.img, &stldata.bpp,
+			&stldata.size_l, &stldata.endian);
+	stldata.z_buffer = (double *)malloc_wrap(sizeof(double) * WIN_WIDTH * WIN_HEIGHT);
+	for (int i = 0; i < WIN_WIDTH * WIN_HEIGHT; i++)
+		stldata.z_buffer[i] = INF;
+	draw_stl(&stldata);
+	mlx_put_image_to_window(stldata.mlx, stldata.win, stldata.img, 0, 0);
+	mlx_loop(stldata.mlx);
+	mlx_destroy_display(stldata.mlx);
 	free(stldata.tris);
 }

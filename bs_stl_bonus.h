@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 01:35:41 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:14:55 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BS_STL_BONUS_H
 
 # include "b_fdf_bonus.h"
+
+# define STL_EDGE_COLOR	0x000000FF
+# define STL_FACE_COLOR	0x00FFFFFF
 
 typedef struct s_tri
 {
@@ -49,5 +52,11 @@ typedef struct s_stldata
 void	stl(char *filename);
 
 void	read_stl(char *filename, t_stldata *stldata);
+
+void	draw_tri(t_stldata *stldata, t_tri *tri);
+
+void	stl_draw_point(t_stldata *stldata, t_point p);
+
+void	draw_stl(t_stldata *stldata);
 
 #endif

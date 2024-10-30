@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 01:16:45 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:10:14 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	isometric(t_data *data, t_map *map);
 
 // b_set_color_bonus.c
 void	set_color(t_data *data, t_map *map, int i, int j);
+void	small_endian_color(t_point *point);
 
 // b_rotate_bonus.c
 void	rotate_x(double pos[3], double angle);

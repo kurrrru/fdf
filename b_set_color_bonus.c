@@ -6,13 +6,11 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:48:51 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 19:53:35 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:10:24 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_fdf_bonus.h"
-
-static void	small_endian_color(t_point *point);
 
 void	set_color(t_data *data, t_map *map, int i, int j)
 {
@@ -28,7 +26,7 @@ void	set_color(t_data *data, t_map *map, int i, int j)
 		small_endian_color(&map->points[i][j]);
 }
 
-static void	small_endian_color(t_point *point)
+void	small_endian_color(t_point *point)
 {
 	int	tmp;
 
