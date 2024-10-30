@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bs_stl_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkawaguc <nkawaguc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 20:33:00 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:07:12 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ typedef struct s_stldata
 	double		y_min;
 }	t_stldata;
 
-
 void	stl(char *filename);
 
 void	read_stl(char *filename, t_stldata *stldata);
@@ -60,5 +59,7 @@ void	stl_draw_point(t_stldata *stldata, t_point p);
 void	draw_stl(t_stldata *stldata);
 
 void	stl_hook(t_stldata *stldata);
+
+void	stl_size_adjust(t_stldata *stldata);
 
 #endif
