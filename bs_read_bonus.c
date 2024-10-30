@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:08:12 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 01:43:54 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/30 22:01:34 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	read_triangle(int fd, t_stldata *stldata)
 		if (line == NULL)
 			error_exit("Invalid STL file");
 		split = ft_split_wrap(line, ' ');
-		if (split_len(split) != 4)
+		if (split_len(split) < 4)
 			error_exit("Invalid STL file");
 		convert_to_triangle(stldata, split, i);
 		free_2d(split);
