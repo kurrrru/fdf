@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:56:53 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 21:44:54 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:36:49 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void	draw_tri(t_stldata *stldata, t_tri *tri)
 	int		i;
 	int		j;
 
+	if (!stl_is_needed_to_draw(tri))
+		return ;
 	stl_calc_step(tri, step);
 	i = -1;
 	while (++i <= step[0])
 	{
 		j = -1;
-		while (++j <= step[1])
+		while ((double)i / step[0] + (double)++j / step[1] <= 1)
 		{
-			if ((double)i / step[0] + (double)j / step[1] > 1)
-				continue ;
 			stl_calc_coordinate(&p, tri, (int [2]){i, j}, step);
 			if (i == 0 || j == 0
 				|| (double)i / step[0] + (double)j / step[1] > 1 - 1e-6)

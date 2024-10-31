@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 23:05:48 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 21:36:56 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:36:49 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,8 @@ int		stl_hook_move(t_stldata *stldata, int keycode);
 
 // bs_key_hook_loop_bonus.c
 int		stl_key_hook_loop(int keycode, t_stldata *stldata);
+
+// bs_need_to_draw_bonus.c
+int		stl_is_needed_to_draw(t_tri *tri);
 
 #endif

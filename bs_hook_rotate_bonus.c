@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:23:49 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 21:50:31 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:42:30 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	stl_hook_rotate_x(t_stldata *stldata, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_X_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_X_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
 	{
@@ -49,9 +49,9 @@ int	stl_hook_rotate_y(t_stldata *stldata, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_Y_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_Y_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
 	{
@@ -78,9 +78,9 @@ int	stl_hook_rotate_z(t_stldata *stldata, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_Z_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_Z_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
 	{

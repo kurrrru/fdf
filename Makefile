@@ -38,6 +38,7 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				b_fdf_math_d_bonus.c \
 				b_free_xd_bonus.c \
 				b_hook_bonus.c \
+				b_is_crossing_bonus.c \
 				b_isometric_bonus.c \
 				b_set_color_bonus.c \
 				b_main_bonus.c \
@@ -70,8 +71,8 @@ BONUS_SRCS	=	b_atoi_check_bonus.c \
 				bs_hook_move_bonus.c \
 				bs_hook_rotate_bonus.c \
 				bs_hook_zoom_bonus.c \
-				bs_key_hook_loop_bonus.c
-
+				bs_key_hook_loop_bonus.c \
+				bs_need_to_draw_bonus.c
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 

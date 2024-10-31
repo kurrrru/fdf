@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:43:56 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 18:45:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:42:05 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	hook_rotate_x(t_data *data, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_X_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_X_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)
 	{
@@ -49,9 +49,9 @@ int	hook_rotate_y(t_data *data, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_Y_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_Y_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)
 	{
@@ -78,9 +78,9 @@ int	hook_rotate_z(t_data *data, int keycode)
 	double	pos[3];
 
 	if (keycode == KEY_ROTATE_Z_UP)
-		angle = ROTATE_ANGLE;
+		angle = ROTATE_ANGLE * PI / 180;
 	else if (keycode == KEY_ROTATE_Z_DOWN)
-		angle = -ROTATE_ANGLE;
+		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)
 	{

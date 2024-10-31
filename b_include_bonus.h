@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:20:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:04:11 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:40:56 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ Exit: ESC\n"
 
 # define ZOOM_FACTOR 1.1
 # define MOVE_FACTOR 10
-# define ROTATE_ANGLE (1.5 * PI / 180)
+# define ROTATE_ANGLE 1.5
 
 # define STL_FLAG 2
 # define STL_FILE_EXTENSION ".stl"

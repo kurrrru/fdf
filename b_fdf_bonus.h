@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:19:30 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 12:10:14 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:28:14 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,9 @@ void	size_adjust(t_data *data, t_map *map);
 
 // b_key_hook_loop_bonus.c
 int		key_hook_loop(int keycode, t_data *data);
+
+// b_is_crossing_bonus.c
+int		is_crossing(t_point p1, t_point p2, t_point v1, t_point v2);
+void	point_init(t_point *v1, t_point *v2, t_point *v3, t_point *v4);
 
 #endif
