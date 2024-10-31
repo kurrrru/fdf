@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:28:08 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 21:28:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/10/31 18:04:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	stl_hook_zoom(t_stldata *stldata, int keycode)
 					- WIN_WIDTH / 2) * zoom + WIN_WIDTH / 2;
 			stldata->tris[i].p[j].y = (stldata->tris[i].p[j].y
 					- WIN_HEIGHT / 2) * zoom + WIN_HEIGHT / 2;
+			stldata->tris[i].p[j].z *= zoom;
 		}
 	}
 	return (0);
