@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:51:26 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/30 21:47:27 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:36:00 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static int	stl_cross_hook(t_stldata *stldata)
 	mlx_destroy_window(stldata->mlx, stldata->win);
 	mlx_loop_end(stldata->mlx);
 	stldata->win = NULL;
+	exit(0);
 	return (0);
 }
 
