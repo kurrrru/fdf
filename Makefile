@@ -89,8 +89,8 @@ MLX			=	$(MLX_DIR)/$(MLX_NAME)
 # Compiler settings
 CC			=	cc
 DEBUG		=	-fsanitize=address
-LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd
-CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%%
+LFLAGS		=	-Wall -Wextra -Werror -L$(MLX_DIR) -lmlx -L$(LIBFT_DIR) -lft -lXext -lX11 -lm -lbsd -O3
+CFLAGS		=	-Wall -Wextra -Werror -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -I%%%% -O3 -lto
 
 # CFLAGS		+=	$(DEBUG)
 # LFLAGS		+=	$(DEBUG)

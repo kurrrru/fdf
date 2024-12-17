@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:49:10 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/29 23:21:46 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 22:26:36 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	hook_zoom(t_data *data, int keycode)
 
 	if (keycode == KEY_ZOOM_IN)
 		zoom = ZOOM_FACTOR;
-	else if (keycode == KEY_ZOOM_OUT)
+	else
 		zoom = 1 / ZOOM_FACTOR;
 	i = -1;
 	while (++i < data->map->height)

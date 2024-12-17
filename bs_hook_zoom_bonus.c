@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:28:08 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/31 18:04:36 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 22:27:11 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	stl_hook_zoom(t_stldata *stldata, int keycode)
 
 	if (keycode == KEY_ZOOM_IN)
 		zoom = ZOOM_FACTOR;
-	else if (keycode == KEY_ZOOM_OUT)
+	else
 		zoom = 1 / ZOOM_FACTOR;
 	i = -1;
 	while (++i < stldata->tris_idx)

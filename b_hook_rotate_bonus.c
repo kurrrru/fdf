@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:43:56 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/31 13:42:05 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 22:26:17 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	hook_rotate_x(t_data *data, int keycode)
 
 	if (keycode == KEY_ROTATE_X_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_X_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)
@@ -50,7 +50,7 @@ int	hook_rotate_y(t_data *data, int keycode)
 
 	if (keycode == KEY_ROTATE_Y_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_Y_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)
@@ -79,7 +79,7 @@ int	hook_rotate_z(t_data *data, int keycode)
 
 	if (keycode == KEY_ROTATE_Z_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_Z_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < data->map->height)

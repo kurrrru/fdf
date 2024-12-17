@@ -6,7 +6,7 @@
 /*   By: nkawaguc <nkawaguc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:23:49 by nkawaguc          #+#    #+#             */
-/*   Updated: 2024/10/31 13:42:30 by nkawaguc         ###   ########.fr       */
+/*   Updated: 2024/12/17 22:27:33 by nkawaguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	stl_hook_rotate_x(t_stldata *stldata, int keycode)
 
 	if (keycode == KEY_ROTATE_X_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_X_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
@@ -50,7 +50,7 @@ int	stl_hook_rotate_y(t_stldata *stldata, int keycode)
 
 	if (keycode == KEY_ROTATE_Y_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_Y_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
@@ -79,7 +79,7 @@ int	stl_hook_rotate_z(t_stldata *stldata, int keycode)
 
 	if (keycode == KEY_ROTATE_Z_UP)
 		angle = ROTATE_ANGLE * PI / 180;
-	else if (keycode == KEY_ROTATE_Z_DOWN)
+	else
 		angle = -ROTATE_ANGLE * PI / 180;
 	i = -1;
 	while (++i < stldata->tris_idx)
